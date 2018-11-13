@@ -38,3 +38,24 @@ aList = []
 print type(aList)
 aDict = {}
 print type(aDict)
+
+# Concatenate is programming speak for adding things together!
+first = "Katie "
+last = "Duane"
+print first + last
+fullName = first + last
+print fullName
+
+# cast = change a variable to a new data type
+
+# OPERANTS: +, -, /, *, %, **
+print 2 + 2
+print 2 - 2
+print 2 / 2
+print 2 * 2
+print 2 % 2
+# % = modulus. Modulus divides the number and gives you a remainder.
+print 2**3
+print "-" * 20 #(* can be used to duplicate non-numbers)
+# Python does not have a simple incrementers: ++ 
+# You must increment by += 1
