@@ -1,0 +1,7 @@
+3 Commons Linux Commands:
+
+Find: searches a specific directory (or the entire system) in order to find files that matches certain criteria. You can search filename, filetype, file size, permissions, owners, date created or modified, etc...
+
+Grep: Searches a file or set of files to see if a given string of texts exists within those files. If it does, it will tell you where. This is helpful when looking for a specific line of code.
+
+Locate: searches the entire system for files or directories that match the criteria then outputs the absolute paths for each result. 

@@ -1,61 +1,88 @@
-print "Hello World"
-print """
-It was a dark and stormy night.
-It was a good second line.
-"""
+# print "Hello World"
+# print """
+# It was a dark and stormy night.
+# It was a good second line.
+# """
 
-# Variables: strings, letters, numbers, or any other stuff you can make with a keyboard!
-# Variables do not make the program faster; they make it slower. 
-# Variables make it easier for us (developers) to wrtie programs.
+# # Variables: strings, letters, numbers, or any other stuff you can make with a keyboard!
+# # Variables do not make the program faster; they make it slower. 
+# # Variables make it easier for us (developers) to wrtie programs.
 
-theBestClass = "our class"
-the_best_class = "our class"
+# theBestClass = "our class"
+# the_best_class = "our class"
 
-print theBestClass
+# print theBestClass
 
-# "\n" = new line!
+# # "\n" = new line!
 
-# Data Types: Programming languages see different types of variables differently. 
-# - Strings: English stuff
-# - Numbers: integers/floats
-# - Booleans: True or False, on or off, 1 or 0
-# - Lists: list of things in one variable
-# - Dictionaries: variable of variables
-# - Objects: Super Dictionaries!
+# # Data Types: Programming languages see different types of variables differently. 
+# # - Strings: English stuff
+# # - Numbers: integers/floats
+# # - Booleans: True or False, on or off, 1 or 0
+# # - Lists: list of things in one variable
+# # - Dictionaries: variable of variables
+# # - Objects: Super Dictionaries!
 
-# Primitive Data Types; Strings, numbers ,booleans
-# Abstract Data Types: Lists, Dictionaries, Objects
+# # Primitive Data Types; Strings, numbers ,booleans
+# # Abstract Data Types: Lists, Dictionaries, Objects
 
-month = "November"
-print type(month)
-date = 13
-print type(date)
-date1 = 13.0
-print type(date1)
-abool = True
-print type(abool)
-aList = []
-print type(aList)
-aDict = {}
-print type(aDict)
+# month = "November"
+# print type(month)
+# date = 13
+# print type(date)
+# date1 = 13.0
+# print type(date1)
+# abool = True
+# print type(abool)
+# aList = []
+# print type(aList)
+# aDict = {}
+# print type(aDict)
 
-# Concatenate is programming speak for adding things together!
-first = "Katie "
-last = "Duane"
-print first + last
-fullName = first + last
-print fullName
+# # Concatenate is programming speak for adding things together!
+# first = "Katie "
+# last = "Duane"
+# print first + last
+# fullName = first + last
+# print fullName
 
-# cast = change a variable to a new data type
+# # cast = change a variable to a new data type
 
-# OPERANTS: +, -, /, *, %, **
-print 2 + 2
-print 2 - 2
-print 2 / 2
-print 2 * 2
-print 2 % 2
-# % = modulus. Modulus divides the number and gives you a remainder.
-print 2**3
-print "-" * 20 #(* can be used to duplicate non-numbers)
+# # OPERANTS: +, -, /, *, %, **
+# print 2 + 2
+# print 2 - 2
+# print 2 / 2
+# print 2 * 2
+# print 2 % 2
+# # % = modulus. Modulus divides the number and gives you a remainder.
+# print 2**3
+# print "-" * 20 #(* can be used to duplicate non-numbers)
 # Python does not have a simple incrementers: ++ 
 # You must increment by += 1
+# Input: raw_input
+# name = raw_input("What is your name? ")
+# print name
+
+# CONDITIONALS:
+# a single = means set the left to whatever is on tbe right
+# Two == means compare whatever is on the left to what is on the right
+# print 2 == 2
+# print 2 == 3
+
+secret_number = 5
+
+if (secret_number == 3):
+    print "Secret number is 3"
+else:
+    print "Secret number is not 3."
+
+# WHILE LOOPS:
+game_on = True;
+i = 0
+while(game_on):
+    i += 1
+    if (i == 10):
+        game_on = False;
+    else:
+        print "Game on!"
+
