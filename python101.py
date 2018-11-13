@@ -86,13 +86,28 @@
 #     else:
 #         print "Game on!"
 
-#Python Exercises: Guess a Number!
+# Python Exercises: Guess a Number!
+# secret_number = 5
+# print "I am thinking of a number from 1 to 10."
+# user_guess = 0
+# while user_guess != secret_number:
+#     user_guess = int(raw_input("What is the number? "))
+#     if (user_guess == secret_number):
+#         print "You win!"
+#     else:
+#         print "Wrong number"
+
 secret_number = 5
 print "I am thinking of a number from 1 to 10."
 user_guess = 0
 while user_guess != secret_number:
     user_guess = int(raw_input("What is the number? "))
-    if (user_guess == secret_number):
+    if (user_guess < secret_number):
+        print "%i is  too low" % user_guess
+    elif (user_guess > secret_number):
+        print "%i is too high" % user_guess
+    else: 
         print "You win!"
-    else:
-        print "Wrong number"
+
+
+
