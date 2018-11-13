@@ -25,3 +25,16 @@ print theBestClass
 
 # Primitive Data Types; Strings, numbers ,booleans
 # Abstract Data Types: Lists, Dictionaries, Objects
+
+month = "November"
+print type(month)
+date = 13
+print type(date)
+date1 = 13.0
+print type(date1)
+abool = True
+print type(abool)
+aList = []
+print type(aList)
+aDict = {}
+print type(aDict)
