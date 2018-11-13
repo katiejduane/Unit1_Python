@@ -1,0 +1,16 @@
+    1  pwd
+    2  ls
+    3  cp
+    4  cd ~/.zshrc
+    5  ls
+    6  cd ~
+    7  ls
+    8  cd Development
+    9  ls
+   10  clear
+   11  ls
+   12  cd 11-18_Immersive
+   13  ls
+   14  cd Unit1
+   15  pwd
+   16  git init
