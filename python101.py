@@ -97,17 +97,66 @@
 #     else:
 #         print "Wrong number"
 
-secret_number = 5
-print "I am thinking of a number from 1 to 10."
+# secret_number = 5
+# print "I am thinking of a number from 1 to 10."
+# user_guess = 0
+# while user_guess != secret_number:
+#     user_guess = int(raw_input("What is the number? "))
+#     if (user_guess < secret_number):
+#         print "%i is  too low" % user_guess
+#     elif (user_guess > secret_number):
+#         print "%i is too high" % user_guess
+#     else: 
+#         print "You win!"
+
+
+# THIS IS THE ONE THAT HAD THE INFINITE LOOPING ISSUE!!!
+# import random
+# my_random_number = random.randint(1, 10)
+# print "I am thinking of a number from 1 to 10. You have 5 guesses left!"
+# user_guess = 0
+# guesses_taken = 0
+
+# while guesses_taken < 6:
+#     print "Take a guess!"
+#     user_guess = int(raw_input("What is the number?"))
+#     guesses_taken = guesses_taken + 1
+#     while user_guess != my_random_number:
+#         if (user_guess < my_random_number):
+#             print "%i is  too low" % user_guess
+#         elif (user_guess > my_random_number):
+#             print "%i is too high" % user_guess
+#         else: 
+#             break
+#     if (user_guess == my_random_number):
+#         print "You guessed it!"
+#     else:
+#         print "Sorry, you didn't get it!"
+
+import random
+my_random_number = random.randint(1, 10)
+
 user_guess = 0
-while user_guess != secret_number:
+guesses_taken = 0
+
+print "I am thinking of a number from 1 to 10. You have 5 guesses left!"
+
+while guesses_taken < 6:
     user_guess = int(raw_input("What is the number? "))
-    if (user_guess < secret_number):
-        print "%i is  too low" % user_guess
-    elif (user_guess > secret_number):
-        print "%i is too high" % user_guess
-    else: 
-        print "You win!"
 
+    guesses_taken = guesses_taken + 1
+    guesses_left = 6 - guesses_taken
 
+    if (user_guess < my_random_number):
+        print "Your guess is too low. You have %i guesses left" % guesses_left
 
+    if (user_guess > my_random_number):
+        print "Your guess is too high. You have %i guesses left" % guesses_left
+
+    if (user_guess == my_random_number):
+        break
+
+if (user_guess == my_random_number):
+    print "You guessed it!"
+else:
+    print "Sorry, you didn't get it!"
