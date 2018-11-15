@@ -50,7 +50,7 @@ reindeer_as_a_list = reindeer.split(', ')
 print reindeer_as_a_list
 
 # If you want part of a list, you use [x:y] This will create a copy of the array. It will not mutate the original.
-# It will start copying at the x index, and will stop at the y.
+# It will start copying at the x index, and will stop at the y. You begin with the index you want, and stop one index after.
 
 dancerPrancer = reindeer_as_a_list[1:3]
 
