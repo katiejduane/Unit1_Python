@@ -33,7 +33,7 @@ for i in range(0, len(v_string)):
 print long_string
 
 
-# Cipher... (how to store the plan/cipher? as strings all smushed together, strings with spaces, or as a list?)
+# Cipher... (how to store the plan/cipher? as strings all smushed together, strings with spaces, as a list, or a dictionary?)
 plain = "abcdefghijklmnopqrstuvwxyz"
 cipher = "bcdefghijklmnopqrstuvwxyza"
 
