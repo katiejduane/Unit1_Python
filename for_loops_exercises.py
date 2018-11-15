@@ -36,7 +36,13 @@ for i in range(box_height):
     else:
         print '*' + space * (box_width - 2) + "*"
 
-# Triangle 1
+# Triangle 1: this isn't right because it's not "centered"
+x = 1
+n = 4
+while (x <= n):
+    print("*" * x)
+    x = x + 1
+#I know it has to always be 7 "characters" wide, with different numbers of empty spaces and asterisks...
 
 
 
