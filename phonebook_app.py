@@ -61,7 +61,10 @@ def welcome():
 
 def look_up_entry():
     name = raw_input("Type first and last name: ").upper()
-    print phonebook.get(name)
+    if name not in phonebook:
+        print "Contact not found, try again."
+    else:
+        print phonebook.get(name)
 
 def add_contact(): #This code throws no errors but: it adds the contact and then it vanishes when the variable changes...
     print "Great, you'd like to add a new contact!"
@@ -72,7 +75,8 @@ def add_contact(): #This code throws no errors but: it adds the contact and then
         phonebook[contact_entry] = contact_num
         print "Contact added!" 
     else:
-        print "Error with phone number. Please try again."
+        print "Error with phone number. Please try again." # Do I need a loop to insert logic to try again?
+    
         
 def delete_contact():  #same issue; contact is deleted during program, but that deletion is not actually saved, dict returns to previous state.
     contact_to_delete = raw_input("Type the first and last name of the contact you want to remove: ")
@@ -102,7 +106,7 @@ def start_phonebook():
         elif user_choice == 4:
             print phonebook
 
-        elif user_choice == 5:
+        elif user_choice == 5: # couldn't seem to create this outside the function, as 'start' was not defined
             quit_opt_q = raw_input("Would you like to exit? Y or N: ")
             quit_opt = quit_opt_q.upper()
             if quit_opt == "Y":
@@ -135,10 +139,10 @@ def start_phonebook():
 # look_up_entry()
 # add_contact()
 # delete_contact()
-start_phonebook()
+# start_phonebook()
 
 
-print phonebook
+# print phonebook
 
 
 
