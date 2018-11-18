@@ -89,31 +89,34 @@ def delete_contact():  #same issue; contact is deleted during program, but that 
 #Logic to try again?
         
       
-def start_phonebook(): 
+def start_phonebook(): # I need to work on how it reprints the welcome/prompts fter the user hits a number and then finishes entering. Like adding a quit or return to menu prompt or something...
     start = True 
+    def quit_prompt(): # This doesn't work right... doesn't print 'exiting' and doesn't actually change the boolean to stop the while loop...
+        quit_op = raw_input("Would you like to something else or quit? Enter Q for Quit or C to continue using your phonebook: ")
+        quit_op = quit_op.upper
+        if quit_op == "Q":
+            print "Exiting..."
+            start = False
+        else:
+            pass
+
     while start:
         welcome()
         user_choice = int(raw_input("Enter a number from the list: "))
         if user_choice == 1:
             look_up_entry()
-                
+            quit_prompt()    
         elif user_choice == 2:
             add_contact()
-
+            quit_prompt()
         elif user_choice == 3:
             delete_contact()
-
+            quit_prompt()
         elif user_choice == 4:
             print phonebook
-
+            quit_prompt()
         elif user_choice == 5: # couldn't seem to create this outside the function, as 'start' was not defined
-            quit_opt_q = raw_input("Would you like to exit? Y or N: ")
-            quit_opt = quit_opt_q.upper()
-            if quit_opt == "Y":
-                print "Exiting..."
-                start == False # This isn't exiting properly...
-            else:
-                continue
+            quit_prompt()
         else:
             print "Option not found. Choose from 1-5"
                 
@@ -139,7 +142,7 @@ def start_phonebook():
 # look_up_entry()
 # add_contact()
 # delete_contact()
-# start_phonebook()
+start_phonebook()
 
 
 # print phonebook
