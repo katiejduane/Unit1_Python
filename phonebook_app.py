@@ -36,13 +36,13 @@
 # 1. Make a phonebook with 5 entries
 # 2.
 
-# phonebook = {
-#     "BRENDAN BRODY": "716-935-9264", #The dashes are casuing numbers to print wrong. How to fix w/o making a string??
-#     "ELLEN BRODY": "716-982-9404",
-#     "HANNAH DUANE": "716-597-9296",
-#     "STEVEN DUANE": "716-432-2939",
-#     "SHIRLEY DUANE": "716-598-0220"
-# }
+phonebook = {
+    "BRENDAN BRODY": "716-935-9264", #The dashes are casuing numbers to print wrong. How to fix w/o making a string??
+    "ELLEN BRODY": "716-982-9404",
+    "HANNAH DUANE": "716-597-9296",
+    "STEVEN DUANE": "716-432-2939",
+    "SHIRLEY DUANE": "716-598-0220"
+}
 
 from time import sleep
 
@@ -73,15 +73,15 @@ from time import sleep
 #     else:
 #         print "Error with phone number. Please try again."
         
-# def delete_contact(): # Does not work!
-#     contact_to_delete = raw_input("Type the first and last name of the contact you want to remove: ")
-#     contact_to_delete = contact_to_delete.upper()
-#     for name in phonebook.items():
-#         if name == contact_to_delete:
-#             del mydict[name]
-#             print "Contact deleted"
-#         else:
-#             print "Contact not found." #Logic to try again? within this loop and not the outer loop? It's printing 5 times for each contact it doesn't match...ugh!
+def delete_contact(): 
+    contact_to_delete = raw_input("Type the first and last name of the contact you want to remove: ")
+    contact_to_delete = contact_to_delete.upper()
+    if contact_to_delete in phonebook:
+        del phonebook[contact_to_delete]
+        print "Contact deleted"
+    else:
+        print "Contact not found, try again"
+#Logic to try again?
         
         
 def start_phonebook():
@@ -109,7 +109,7 @@ def start_phonebook():
     
     def add_contact(): #This code throws no errors but: it adds the contact and then it vanishes when the variable changes...
         print "Great, you'd like to add a new contact!"
-        contact_name = raw_input("Type the first and last name of your contact: ")
+        contact_name = raw_input("Type the first and last name of your contact: ") # Would using a loop make the info stay?
         contact_entry = contact_name.upper()
         contact_num = raw_input("Enter your contact's number xxx-xxx-xxxx ")
         if len(contact_num) == 12:
@@ -162,11 +162,13 @@ def start_phonebook():
 # search = phonebook.get()
 # print search
 
-# add_contact()
-start_phonebook()
 # look_up_entry()
+# add_contact()
+delete_contact()
+# start_phonebook()
 
-# print phonebook
+
+print phonebook
 
 
 
