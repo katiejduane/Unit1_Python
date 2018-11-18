@@ -46,34 +46,35 @@ phonebook = {
 
 from time import sleep
 
-# def welcome():
-#     user_name = "Katie"
-#     print "Welcome to your phonebook, %s, what would like to do today?" % user_name
-#     sleep(1)
-#     print """
-#     1. Look up an entry
-#     2. Set an entry 
-#     3. Delete an entry
-#     4. List all entries
-#     5. Quit
-#     """
-    # "                     " # what the hell is a way to create a space/line break? nothing works!
-# def look_up_entry():
-#     name = raw_input("Type first and last name: ").upper()
-#     print phonebook.get(name)
+def welcome():
+    user_name = "Katie"
+    print "Welcome to your phonebook, %s, what would like to do today?" % user_name
+    sleep(1)
+    print """
+    1. Look up an entry
+    2. Set an entry 
+    3. Delete an entry
+    4. List all entries
+    5. Quit
+    """
+    "                     " # what the hell is a way to create a space/line break? nothing works!
 
-# def add_contact(): #This code throws no errors but: it adds the contact and then it vanishes when the variable changes...
-#     print "Great, you'd like to add a new contact!"
-#     contact_name = raw_input("Type the first and last name of your contact: ")
-#     contact_entry = contact_name.upper()
-#     contact_num = raw_input("Enter your contact's number xxx-xxx-xxxx ")
-#     if len(contact_num) == 12:
-#         phonebook[contact_entry] = contact_num
-#         print "Contact added!" 
-#     else:
-#         print "Error with phone number. Please try again."
+def look_up_entry():
+    name = raw_input("Type first and last name: ").upper()
+    print phonebook.get(name)
+
+def add_contact(): #This code throws no errors but: it adds the contact and then it vanishes when the variable changes...
+    print "Great, you'd like to add a new contact!"
+    contact_name = raw_input("Type the first and last name of your contact: ")
+    contact_entry = contact_name.upper()
+    contact_num = raw_input("Enter your contact's number xxx-xxx-xxxx ")
+    if len(contact_num) == 12:
+        phonebook[contact_entry] = contact_num
+        print "Contact added!" 
+    else:
+        print "Error with phone number. Please try again."
         
-def delete_contact(): 
+def delete_contact():  #same issue; contact is deleted during program, but that deletion is not actually saved, dict returns to previous state.
     contact_to_delete = raw_input("Type the first and last name of the contact you want to remove: ")
     contact_to_delete = contact_to_delete.upper()
     if contact_to_delete in phonebook:
@@ -83,42 +84,9 @@ def delete_contact():
         print "Contact not found, try again"
 #Logic to try again?
         
-        
-def start_phonebook():
-    phonebook = {
-    "BRENDAN BRODY": "716-935-9264", #The dashes are casuing numbers to print wrong. How to fix w/o making a string??
-    "ELLEN BRODY": "716-982-9404",
-    "HANNAH DUANE": "716-597-9296",
-    "STEVEN DUANE": "716-432-2939",
-    "SHIRLEY DUANE": "716-598-0220"
-}
-    def welcome():
-        user_name = "Katie"
-        print "Welcome to your phonebook, %s, what would like to do today?" % user_name
-        sleep(1)
-        print """
-        1. Look up an entry
-        2. Set an entry 
-        3. Delete an entry
-        4. List all entries
-        5. Quit
-        """
-    def look_up_entry():
-        name = raw_input("Type first and last name: ").upper()
-        print phonebook.get(name)
-    
-    def add_contact(): #This code throws no errors but: it adds the contact and then it vanishes when the variable changes...
-        print "Great, you'd like to add a new contact!"
-        contact_name = raw_input("Type the first and last name of your contact: ") # Would using a loop make the info stay?
-        contact_entry = contact_name.upper()
-        contact_num = raw_input("Enter your contact's number xxx-xxx-xxxx ")
-        if len(contact_num) == 12:
-            phonebook[contact_entry] = contact_num
-            print "Contact added!" 
-        else:
-            print "Error with phone number. Please try again."
-
-    start = True
+      
+def start_phonebook(): 
+    start = True 
     while start:
         welcome()
         user_choice = int(raw_input("Enter a number from the list: "))
@@ -139,9 +107,11 @@ def start_phonebook():
             quit_opt = quit_opt_q.upper()
             if quit_opt == "Y":
                 print "Exiting..."
-                start == False
+                start == False # This isn't exiting properly...
             else:
                 continue
+        else:
+            print "Option not found. Choose from 1-5"
                 
 
 # phonebook["Maria Luna"] = "123-457-7890" ***HMMMMMM. as soon as i comment out this code, these contacts vanish from the dictionary!
@@ -164,8 +134,8 @@ def start_phonebook():
 
 # look_up_entry()
 # add_contact()
-delete_contact()
-# start_phonebook()
+# delete_contact()
+start_phonebook()
 
 
 print phonebook
