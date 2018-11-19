@@ -66,7 +66,7 @@ def look_up_entry():
     else:
         print phonebook.get(name)
 
-def add_contact(): #This code throws no errors but: it adds the contact and then it vanishes when the variable changes...
+def add_contact(): 
     print "Great, you'd like to add a new contact!"
     contact_name = raw_input("Type the first and last name of your contact: ")
     contact_entry = contact_name.upper()
@@ -78,7 +78,7 @@ def add_contact(): #This code throws no errors but: it adds the contact and then
         print "Error with phone number. Please try again." # Do I need a loop to insert logic to try again?
     
         
-def delete_contact():  #same issue; contact is deleted during program, but that deletion is not actually saved, dict returns to previous state.
+def delete_contact(): 
     contact_to_delete = raw_input("Type the first and last name of the contact you want to remove: ")
     contact_to_delete = contact_to_delete.upper()
     if contact_to_delete in phonebook:
@@ -87,20 +87,21 @@ def delete_contact():  #same issue; contact is deleted during program, but that 
     else:
         print "Contact not found, try again"
 #Logic to try again?
-        
-      
-def start_phonebook(): # I need to work on how it reprints the welcome/prompts fter the user hits a number and then finishes entering. Like adding a quit or return to menu prompt or something...
-    start = True 
-    def quit_prompt(): # This doesn't work right... doesn't print 'exiting' and doesn't actually change the boolean to stop the while loop...
+
+start = True
+
+def quit_prompt(): # This doesn't work right... doesn't print 'exiting' and doesn't actually change the boolean to stop the while loop...
         quit_op = raw_input("Would you like to something else or quit? Enter Q for Quit or C to continue using your phonebook: ")
-        quit_op = quit_op.upper
+        quit_op = quit_op.upper()
         if quit_op == "Q":
             print "Exiting..."
             start = False
         else:
-            pass
+            pass       
+      
+def start_phonebook(): # I need to work on how it reprints the welcome/prompts fter the user hits a number and then finishes entering. Like adding a quit or return to menu prompt or something...
 
-    while start:
+    while start == True:
         welcome()
         user_choice = int(raw_input("Enter a number from the list: "))
         if user_choice == 1:
